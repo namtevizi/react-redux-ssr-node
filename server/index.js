@@ -22,7 +22,7 @@ app.use('/media', express.static('media', STATIC_OPTIONS));
 app.disable('x-powered-by');
 
 // start the server
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8000);
 
 // our apps data model
 const data = require('../assets/data.json');
@@ -55,7 +55,8 @@ app.get('/*', (req, res) => {
 
     res.setHeader('Cache-Control', 'assets, max-age=604800')
     return res.send(
-      html.replace('<div id="app"></div>', `<div id="app">${app}</div>`)
+      html.replace('{app}', app)
+          .replace('{preloadedState}', JSON.stringify(store.getState()))
     );
   });
 });

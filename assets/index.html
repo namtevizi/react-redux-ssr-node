@@ -30,7 +30,12 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="app"></div>
+
+    <script>
+      window.__STATE__ = {preloadedState}
+    </script>
+    
+    <div id="app">{app}</div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -43,5 +48,6 @@
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/client.js"></script>
+    
   </body>
 </html>
