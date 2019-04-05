@@ -55,7 +55,7 @@ app.get('/*', (req, res) => {
 
     res.setHeader('Cache-Control', 'assets, max-age=604800')
     return res.send(
-      html.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+      html.replace('<div id="app"></div>', `<div id="app">${app}</div>`)
     );
   });
 });
